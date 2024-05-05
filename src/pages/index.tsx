@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Inter, Poppins } from "next/font/google";
 import Navbar from "@/Components/Navbar";
-
+import Hero from "@/Components/HeroSection/Hero";
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({ weight: ["400", "600"], subsets: ["latin"] });
 
@@ -16,6 +16,7 @@ export default function Home() {
       </Head>
       <main className={poppins.className}>
         <Navbar />
+        <Hero />
       </main>
     </>
   );
