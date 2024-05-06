@@ -7,10 +7,20 @@
   background-image: url("../../../public/assets/coffee-morning.png");
   background-size: cover;
   background-position: center;
+  padding: 50px;
   :global .banner {
     &_heading {
       color: $primary-color;
-      width: 483px;
+      width: 50%;
+      line-height: 90px;
+      font-size: 80px;
+      margin-bottom: 32px;
+    }
+    &_paragraph {
+      width: 50%;
+      font-size: 16px;
+      line-height: 32px;
+      color: $grey-color;
     }
   }
 }

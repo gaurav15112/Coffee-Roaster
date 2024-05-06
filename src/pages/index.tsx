@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Inter, Poppins } from "next/font/google";
+import { Inter, Poppins, Playfair_Display } from "next/font/google";
 import Navbar from "@/Components/Navbar";
 import Hero from "@/Components/HeroSection/Hero";
 const inter = Inter({ subsets: ["latin"] });
