@@ -5,17 +5,20 @@
       font-size: 140px;
       color: $silver-color;
       text-align: center;
+      margin-bottom: 70px;
     }
     &_card-container {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: center;
       align-items: center;
-
+      margin-bottom: 117px;
       &_card {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
+
+        gap: 29px;
         &_image {
           width: 126px;
 
@@ -24,8 +27,21 @@
           }
         }
         &_text {
-          color: red;
+          width: 224px;
+          font-size: 24px;
+          color: $black-color2;
           line-height: 34px;
+          text-align: center;
+          font-family: var(--font-playfairDisplay);
+        }
+        &_content {
+          font-size: 15px;
+
+          padding: 24px;
+          text-align: center;
+          font-weight: 400px;
+          line-height: 30px;
+          font-family: var(--font-poppins);
         }
       }
     }
