@@ -1,3 +1,33 @@
+@import "../../styles/Variable";
 .ourcollect {
-  background-color: aqua;
+  :global .ourcollect {
+    &_heading {
+      font-size: 140px;
+      color: $silver-color;
+      text-align: center;
+    }
+    &_card-container {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      &_card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        &_image {
+          width: 126px;
+
+          img {
+            width: 100%;
+          }
+        }
+        &_text {
+          color: red;
+          line-height: 34px;
+        }
+      }
+    }
+  }
 }
