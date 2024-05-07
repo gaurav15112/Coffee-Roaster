@@ -1,0 +1,22 @@
+@import "../../../styles/Variable";
+
+.howitworks {
+  :global .howitworks {
+    &_heading {
+      border: 2px solid black;
+      &__title {
+        background-color: greenyellow;
+        border: 2px solid red;
+        width: 178px;
+        height: 33px;
+        p {
+          font-family: var(--font-playfairDisplay);
+          font-size: 28px;
+          font-weight: 900;
+          line-height: 38px;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
