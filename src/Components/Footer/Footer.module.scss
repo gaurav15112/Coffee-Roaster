@@ -1,6 +1,54 @@
 @import "../../styles/Variable";
 
 .footer {
+  // border: 2px solid red;
+  margin-top: 150px;
+  height: 131px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #2c353e;
   :global .footer {
+    &_logo {
+      width: 350px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    &_links {
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+      align-items: center;
+      list-style-type: none;
+
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+        color: $primary-color;
+      }
+    }
+    &_item {
+      font-size: 13px;
+      color: #acacac;
+      font-family: var(--font-poppins);
+      font-weight: 600;
+      line-height: 23px;
+    }
+
+    &_social-logo {
+      display: flex;
+      color: $primary-color;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 357px;
+      height: 37px;
+      background-color: #2c353e;
+      cursor: pointer;
+      // border: 1px solid black;
+    }
   }
 }
