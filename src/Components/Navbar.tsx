@@ -8,12 +8,14 @@ const Navbar: React.FC = () => {
       <header className="container-fluid">
         <nav className={`${styles.navbar} container`}>
           <div className="navbar_logo">
-            <Image
-              src="/assets/logo.png"
-              alt="coffee roasters"
-              width={300}
-              height={80}
-            />
+            <Link href={"#"}>
+              <Image
+                src="/assets/logo.png"
+                alt="coffee roasters"
+                width={300}
+                height={80}
+              />
+            </Link>
           </div>
           <ul className="navbar_links">
             <Link href="#">
