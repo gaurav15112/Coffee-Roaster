@@ -4,3 +4,13 @@
 $primary-color: #fdfcf7;
 $black-color: #000000;
 $grey-color: #e8e8e8;
+$green-color: #0c8785;
+$silver-color: #dbdbdb;
+$black-color2: #33414c;
+$silver-color2: #e8e8e8;
+$cream-color: #fbd6b9;
+
+@mixin container {
+  background-color: #272e36;
+  height: 580px;
+}

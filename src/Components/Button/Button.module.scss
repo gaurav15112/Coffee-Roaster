@@ -1,0 +1,14 @@
+@import "../../styles/Variable";
+.button {
+  width: 230px;
+  height: 60px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: $green-color;
+  color: $primary-color;
+  font-size: 20px;
+  line-height: 30px;
+  font-family: var(--font-playfairDisplay);
+  font-weight: 900;
+}

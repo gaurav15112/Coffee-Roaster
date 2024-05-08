@@ -8,7 +8,7 @@ const HowItWork = () => {
         <div className={`${style.howitworks} container`}>
           <div className="howitworks_heading">
             <div className="howitworks_heading__title">
-              <p> How it works</p>
+              <h2> How it works</h2>
             </div>
           </div>
           <div className="howitworks_section">

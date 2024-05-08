@@ -1,10 +1,28 @@
 import Head from "next/head";
-import { Inter, Poppins, Playfair_Display } from "next/font/google";
+import {
+  Inter,
+  Poppins,
+  Playfair_Display,
+  Playfair_Display_SC,
+} from "next/font/google";
 import Navbar from "@/Components/Navbar";
 import Hero from "@/Components/HeroSection/Hero";
+import OurCollection from "@/Components/OurCollection/OurCollection";
+import WhyChooseUs from "@/Components/WhyChooseUs/WhyChooseUs";
+import HowItWork from "@/Components/Button/HowItWork/HowItWork";
+import Footer from "@/Components/Footer/Footer";
 const inter = Inter({ subsets: ["latin"] });
-const poppins = Poppins({ weight: ["400", "600"], subsets: ["latin"] });
+const poppins = Poppins({
+  variable: "--font-poppins",
+  weight: ["400", "600"],
+  subsets: ["latin"],
+});
 
+const playfairDisplay = Playfair_Display_SC({
+  variable: "--font-playfair-display-sc",
+  weight: ["400", "700", "900"],
+  subsets: ["latin"],
+});
 export default function Home() {
   return (
     <>
@@ -14,9 +32,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={poppins.className}>
+      <main className={`${poppins.variable} ${playfairDisplay.variable}`}>
         <Navbar />
         <Hero />
+        <OurCollection />
+        <WhyChooseUs />
+        <HowItWork />
+        <Footer />
       </main>
     </>
   );

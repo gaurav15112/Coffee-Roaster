@@ -6,10 +6,10 @@
   flex-direction: column;
   height: 581px;
   border-radius: 15px;
-  margin-bottom: 200px;
+  margin-bottom: 250px;
+  padding: 50px;
   :global .WhyChooseUs {
     &_heading {
-      // border: 2px solid red;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -43,19 +43,19 @@
       height: 451px;
       align-self: flex-end;
       position: relative;
-      bottom: -170px;
+      bottom: -117px;
 
       &_card {
         // border: 2px solid red;
         width: 314px;
         height: 357px;
-        border-radius: 15px;
+
         &_container {
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: space-evenly;
-
+          border-radius: 15px;
           // border: 2px solid yellow;
           background-color: $green-color;
           height: 100%;

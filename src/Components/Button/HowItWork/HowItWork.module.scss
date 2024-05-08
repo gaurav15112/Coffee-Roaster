@@ -5,16 +5,13 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-
+  padding: 90px;
   :global .howitworks {
     &_heading {
-      // border: 2px solid black;
       &__title {
-        // background-color: greenyellow;
-        // border: 2px solid red;
         width: 178px;
         height: 33px;
-        p {
+        h2 {
           font-family: var(--font-playfairDisplay);
           font-size: 28px;
           font-weight: 900;
@@ -45,7 +42,6 @@
     }
     &_plans {
       display: flex;
-
       justify-content: flex-start;
       gap: 80px;
       width: 100%;
@@ -58,7 +54,7 @@
         display: flex;
         flex-direction: column;
         gap: 40px;
-        margin-bottom: 90px;
+        margin-bottom: 20px;
         &_title {
           width: 103px;
           height: 78px;

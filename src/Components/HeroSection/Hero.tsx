@@ -12,15 +12,17 @@ const Hero: React.FC = () => {
     <>
       <div className="container-fluid">
         <div className={`${styles.banner} container`}>
-          <div className={`banner_heading ${playfairDisplay.className}`}>
-            Great coffee made simple
+          <div className="banner_inner">
+            <div className={`banner_heading ${playfairDisplay.className}`}>
+              Great coffee made simple
+            </div>
+            <p className="banner_paragraph">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Blanditiis, mollitia! Lorem ipsum dolor sit amet consectetur
+              adipisicing elit.
+            </p>
+            <Button buttonText="Create your plan" />
           </div>
-          <p className="banner_paragraph">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Blanditiis, mollitia! Lorem ipsum dolor sit amet consectetur
-            adipisicing elit.
-          </p>
-          <Button />
         </div>
       </div>
     </>
