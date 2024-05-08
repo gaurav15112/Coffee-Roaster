@@ -1,12 +1,17 @@
 @import "../../../styles/Variable";
 
 .howitworks {
+  // border: 2px solid gold;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
   :global .howitworks {
     &_heading {
-      border: 2px solid black;
+      // border: 2px solid black;
       &__title {
-        background-color: greenyellow;
-        border: 2px solid red;
+        // background-color: greenyellow;
+        // border: 2px solid red;
         width: 178px;
         height: 33px;
         p {
@@ -16,6 +21,83 @@
           line-height: 38px;
           text-align: left;
         }
+      }
+    }
+    &_section {
+      display: flex;
+      &_steps {
+        display: flex;
+
+        align-items: center;
+
+        &__ellipse {
+          width: 32px;
+          height: 32px;
+          border: 2px solid #0e8684;
+          border-radius: 50%;
+        }
+        &__line {
+          width: 321px;
+          border: 1px solid #fbd6b9;
+          height: 1px;
+        }
+      }
+    }
+    &_plans {
+      display: flex;
+
+      justify-content: flex-start;
+      gap: 80px;
+      width: 100%;
+      margin-top: 41px;
+      // border: 2px solid red;
+      &__card {
+        width: 266px;
+        height: auto;
+        // border: 2px solid yellowgreen;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 90px;
+        &_title {
+          width: 103px;
+          height: 78px;
+          h2 {
+            font-family: var(--font-playfairDisplay);
+            font-size: 80px;
+            line-height: 90px;
+            text-align: left;
+            font-weight: 900;
+            color: #fbd6b9;
+          }
+        }
+        &_header {
+          width: 180px;
+          height: 90px;
+          h3 {
+            font-family: var(--font-playfairDisplay);
+            font-size: 32px;
+            font-weight: 900;
+            line-height: 42px;
+            text-align: left;
+            color: $black-color2;
+          }
+        }
+        &_content {
+          width: 262px;
+          p {
+            font-family: var(--font-poppins);
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 30px;
+            text-align: left;
+            color: #535353;
+          }
+        }
+      }
+    }
+    &_button {
+      .button {
       }
     }
   }
