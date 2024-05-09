@@ -6,7 +6,6 @@ import giftpack from "../../../public/assets/Vector.svg";
 import truckvan from "../../../public/assets/fa-solid_shipping-fast.svg";
 import data from "../../../public/data.json";
 
-interface;
 const WhyChooseUs: React.FC = () => {
   return (
     <>
