@@ -51,6 +51,9 @@
         height: 357px;
 
         &_container {
+          &:hover {
+            background-color: gray;
+          }
           display: flex;
           flex-direction: column;
           align-items: center;
