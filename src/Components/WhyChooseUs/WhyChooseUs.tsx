@@ -4,6 +4,9 @@ import Image from "next/image";
 import beanlogo from "../../../public/assets/bxs_coffee-bean.svg";
 import giftpack from "../../../public/assets/Vector.svg";
 import truckvan from "../../../public/assets/fa-solid_shipping-fast.svg";
+import data from "../../../public/data.json";
+
+interface;
 const WhyChooseUs: React.FC = () => {
   return (
     <>
@@ -21,17 +24,20 @@ const WhyChooseUs: React.FC = () => {
           <div className="WhyChooseUs_section">
             <div className="WhyChooseUs_section_card">
               <div className="WhyChooseUs_section_card_container">
-                <div className="logo">
-                  <Image src={beanlogo} alt="beanlogo" />
-                </div>
+                {data.map((card) => {
+                  return (
+                    <>
+                      <div className="logo">
+                        <Image src={beanlogo} alt="beanlogo" />
+                      </div>
 
-                <div className="card-title">Best quality</div>
-                <div className="card-text">
-                  <p>
-                    Discover an endless variety of the world s best artisan
-                    coffee from each of our roasters.
-                  </p>
-                </div>
+                      <div className="card-title">{card.title}</div>
+                      <div className="card-text">
+                        <p>{card.description}</p>
+                      </div>
+                    </>
+                  );
+                })}
               </div>
             </div>
 
