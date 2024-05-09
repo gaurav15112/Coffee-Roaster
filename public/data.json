@@ -1,0 +1,33 @@
+[
+    {
+      "id":"post1",
+      "title": "Best quality",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since",
+      "date": "01-04-2024",
+      "image": "aa"
+    },
+    {
+      "id":"post2",
+      "title": "Planalto",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since",
+      "date": "01-04-2024",
+      "slug":"post2",
+      "image": "aa"
+    },
+    {
+      "id":"post3",
+      "title": "Piccollo",
+      "description": "lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since",
+      "date": "01-04-2024",
+      "slug":"post3",
+      "image":"aa"
+      
+    },
+    {
+        "id":"post3",
+        "title": "Danche",
+        "description": "lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since",
+        "image":"aa"
+        
+      }
+  ]
