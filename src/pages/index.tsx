@@ -11,6 +11,7 @@ import OurCollection from "@/Components/OurCollection/OurCollection";
 import WhyChooseUs from "@/Components/WhyChooseUs/WhyChooseUs";
 import HowItWork from "@/Components/Button/HowItWork/HowItWork";
 import Footer from "@/Components/Footer/Footer";
+
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -23,6 +24,15 @@ const playfairDisplay = Playfair_Display_SC({
   weight: ["400", "700", "900"],
   subsets: ["latin"],
 });
+
+const homeBanner = {
+  herosection: {
+    title: "Great coffee made simple",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since .",
+    buttontext: "create your plan",
+  },
+};
 export default function Home() {
   return (
     <>
@@ -34,7 +44,7 @@ export default function Home() {
       </Head>
       <main className={`${poppins.variable} ${playfairDisplay.variable}`}>
         <Navbar />
-        <Hero />
+        <Hero data={homeBanner.herosection} />
         <OurCollection />
         <WhyChooseUs />
         <HowItWork />

@@ -7,7 +7,7 @@ import {
 } from "next/font/google";
 import Navbar from "@/Components/Navbar";
 import Hero from "@/Components/HeroSection/Hero";
-
+import data from "../../../public/data.json";
 import Footer from "@/Components/Footer/Footer";
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -21,6 +21,15 @@ const playfairDisplay = Playfair_Display_SC({
   weight: ["400", "700", "900"],
   subsets: ["latin"],
 });
+
+const homeBanner = {
+  herosection: {
+    title: "Create in Plan",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since .",
+    buttontext: "",
+  },
+};
 export default function Home() {
   return (
     <>
@@ -32,7 +41,7 @@ export default function Home() {
       </Head>
       <main className={`${poppins.variable} ${playfairDisplay.variable}`}>
         <Navbar />
-        <Hero />
+        <Hero data={homeBanner.herosection} />
         <Footer />
       </main>
     </>
