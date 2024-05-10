@@ -26,7 +26,7 @@ const WhyChooseUs: React.FC = () => {
                   <Image src={beanlogo} alt="beanlogo" />
                 </div>
 
-                <div className="card-title">{data[0].title}</div>
+                <div className="card-title">Best quality</div>
                 <div className="card-text">
                   <p>
                     Discover an endless variety of the world s best artisan
