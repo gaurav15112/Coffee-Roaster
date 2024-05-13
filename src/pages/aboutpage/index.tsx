@@ -10,6 +10,7 @@ import Hero from "@/Components/HeroSection/Hero";
 import data from "../../../public/data.json";
 import Footer from "@/Components/Footer/Footer";
 import HowItWork from "@/Components/Button/HowItWork/HowItWork";
+import Prefences from "@/Components/Prefences/Prefences";
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -54,6 +55,7 @@ export default function Home() {
           isVisible={isVisible}
           paragrphColr={paragrphColr}
         />
+        <Prefences />
         <Footer />
       </main>
     </>
