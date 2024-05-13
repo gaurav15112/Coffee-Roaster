@@ -10,9 +10,9 @@ const playfairDisplay = Playfair_Display_SC({
 });
 // const { herosection } = componentdata;
 // console.log(herosection);
-const Hero: React.FC = (props) => {
+const Hero: React.FC = (props: any) => {
   console.log(props);
-  const { buttontext } = props.data;
+  const { buttontext } = props?.data;
   return (
     <div className="container-fluid">
       <div className={`${styles.banner} container`}>
