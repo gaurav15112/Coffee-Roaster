@@ -1,13 +1,25 @@
 import React from "react";
 import style from "./HowItWork.module.scss";
 import Button from "../Button";
-const HowItWork = () => {
+import { redirect } from "next/dist/server/api-utils";
+const HowItWork = (props) => {
+  console.log(props);
+  // const containerStyle = {
+  //   color: props.textColor,
+  //   paragraphColor: props.paragrphColr,
+  // };
   return (
     <>
       <div className="container-fluid">
-        <div className={`${style.howitworks} container`}>
-          <div className="howitworks_heading">
-            <div className="howitworks_heading__title">
+        <div
+          className={`${style.howitworks}  container`}
+          style={{ backgroundColor: props.backgroundcolor }}
+        >
+          <div className="howitworks_heading ">
+            <div
+              className="howitworks_heading__title"
+              style={{ display: props.isVisible ? "block" : "none" }}
+            >
               <h2> How it works</h2>
             </div>
           </div>
@@ -31,10 +43,10 @@ const HowItWork = () => {
                 <h2>01</h2>
               </div>
               <div className="howitworks_plans__card_header">
-                <h3> Pick your coffee</h3>
+                <h3 style={{ color: props.textColor }}> Pick your coffee</h3>
               </div>
               <div className="howitworks_plans__card_content">
-                <p>
+                <p style={{ color: props.paragrphColr }}>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
                   standard dummy text ever since .
@@ -46,10 +58,10 @@ const HowItWork = () => {
                 <h2>02</h2>
               </div>
               <div className="howitworks_plans__card_header">
-                <h3> Choose the frequency</h3>
+                <h3 style={{ color: props.textColor }}>Choose the frequency</h3>
               </div>
               <div className="howitworks_plans__card_content">
-                <p>
+                <p style={{ color: props.paragrphColr }}>
                   It has survived not only five centuries, but also the leap
                   into electronic typesetting, remaining essentially unchanged.
                   It was popularised
@@ -61,10 +73,10 @@ const HowItWork = () => {
                 <h2>03</h2>
               </div>
               <div className="howitworks_plans__card_header">
-                <h3>Receive and enjoy!</h3>
+                <h3 style={{ color: props.textColor }}>Receive and enjoy!</h3>
               </div>
               <div className="howitworks_plans__card_content">
-                <p>
+                <p style={{ color: props.paragrphColr }}>
                   Contrary to popular belief, Lorem Ipsum is not simply random
                   text. It has roots in a piece of classical Latin literature
                   from 45 BC, making it over 2000 years old.
