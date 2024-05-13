@@ -9,6 +9,7 @@ import Navbar from "@/Components/Navbar";
 import Hero from "@/Components/HeroSection/Hero";
 import data from "../../../public/data.json";
 import Footer from "@/Components/Footer/Footer";
+import HowItWork from "@/Components/Button/HowItWork/HowItWork";
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -30,7 +31,12 @@ const homeBanner = {
     buttontext: "",
   },
 };
+
 export default function Home() {
+  const backgroundColor = "#252C34";
+  const textColor = "#FFFFFF";
+  const isVisible = false;
+  const paragrphColr = "#E4E4E4";
   return (
     <>
       <Head>
@@ -42,6 +48,12 @@ export default function Home() {
       <main className={`${poppins.variable} ${playfairDisplay.variable}`}>
         <Navbar />
         <Hero data={homeBanner.herosection} />
+        <HowItWork
+          backgroundcolor={backgroundColor}
+          textColor={textColor}
+          isVisible={isVisible}
+          paragrphColr={paragrphColr}
+        />
         <Footer />
       </main>
     </>
