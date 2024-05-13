@@ -1,6 +1,38 @@
 @import "../../styles/Variable";
 
 .prefences {
+  // border: 2px solid red;
   :global .prefences {
+    &_table {
+      width: 274px;
+      display: flex;
+      gap: 40px;
+      margin-top: 21px;
+      margin-bottom: 28px;
+      font-family: var(--font-playfairDisplay);
+      // border: 2px solid black;
+      &_title {
+        width: 35px;
+        height: 33px;
+
+        font-size: 25px;
+        font-weight: 800;
+        line-height: 35px;
+        text-align: left;
+        color: #adacb1;
+      }
+      &_heading {
+        font-size: 25px;
+        font-weight: 800;
+        line-height: 35px;
+        text-align: left;
+        color: #adacb1;
+      }
+      &_line {
+        width: 266px;
+        height: 1px;
+        border: 1px solid #cacaca;
+      }
+    }
   }
 }
