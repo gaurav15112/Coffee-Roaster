@@ -6,6 +6,7 @@
   flex-direction: column;
   gap: 50px;
   padding: 90px;
+
   :global .howitworks {
     &_heading {
       &__title {
@@ -19,7 +20,11 @@
           text-align: left;
         }
       }
+      &--blue {
+        background-color: red;
+      }
     }
+
     &_section {
       display: flex;
       &_steps {
