@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Navbar.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+
 const Navbar: React.FC = () => {
   return (
     <>
@@ -18,10 +19,10 @@ const Navbar: React.FC = () => {
             </Link>
           </div>
           <ul className="navbar_links">
-            <Link href="#">
+            <Link href="/">
               <li className="navbar_item">Home</li>
             </Link>
-            <Link href="#">
+            <Link href="/aboutpage">
               <li className="navbar_item">About us</li>
             </Link>
             <Link href="#">
