@@ -1,7 +1,7 @@
 @import "../../styles/Variable";
 
 .prefences {
-  border: 2px solid red;
+  // border: 2px solid red;
   display: flex;
   gap: 95px;
 
@@ -39,27 +39,58 @@
         }
       }
     }
+
     &_secondCont {
       // border: 2px solid yellow;
       width: 646px;
-      display: flex;
-      align-items: center;
-      &_card {
-        // border: 2px solid black;
 
+      &_card {
+        cursor: pointer;
         &__heading {
+          width: 100%;
+          display: flex;
+          gap: 64px;
+
           margin-bottom: 65px;
           font-family: var(--font-playfairDisplay);
           font-size: 40px;
           font-weight: 900;
           line-height: 45px;
-          text-align: center;
+          text-align: left;
           color: #83888e;
+          .rotateup {
+            transform: rotate(0);
+          }
+        }
+
+        &__arrow {
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: transform 0.5s ease-in-out;
+          transform: rotate(180deg);
+
+          img {
+            width: 25px;
+            height: 15.42px;
+          }
         }
       }
+
       &_secondConts {
         display: flex;
         gap: 20px;
+        .clicked {
+          background-color: #0e8684;
+          .prefences_secondCont_secondConts_cards_title {
+            color: white;
+          }
+          .prefences_secondCont_secondConts_cards_content {
+            color: white;
+          }
+        }
         &_cards {
           display: flex;
           flex-direction: column;
@@ -69,8 +100,7 @@
           height: 276px;
           background-color: #f4f1ea;
           border-radius: 10px;
-          gap: 30px;
-
+          transition: all 0.2s;
           gap: 30px;
           &_title {
             width: 96px;
@@ -81,8 +111,10 @@
             text-align: left;
             color: #383c47;
             margin-top: 29px;
+            transition: all 0.2s;
           }
           &_content {
+            transition: all 0.2s;
             font-family: var(--font-poppins);
             font-size: 15px;
             font-weight: 400;
