@@ -17,11 +17,15 @@ const Hero: React.FC = (props: any) => {
     <div className="container-fluid">
       <div className={`${styles.banner} container`}>
         <div className="banner_inner">
-          <div className={`banner_heading ${playfairDisplay.className}`}>
-            {props.data.title}
-          </div>
-          <p className="banner_paragraph">{props.data.description}</p>
-          {buttontext ? <Button buttonText={buttontext} /> : ""}
+          {props?.data?.title && (
+            <div className={`banner_heading ${playfairDisplay.className}`}>
+              {props?.data?.title}
+            </div>
+          )}
+          {props?.data?.description && (
+            <p className="banner_paragraph">{props?.data?.description}</p>
+          )}
+          {buttontext && <Button buttonText={buttontext} />}
         </div>
       </div>
     </div>
