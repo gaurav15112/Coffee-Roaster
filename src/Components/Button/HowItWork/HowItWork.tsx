@@ -3,8 +3,7 @@ import style from "./HowItWork.module.scss";
 import Button from "../Button";
 import { redirect } from "next/dist/server/api-utils";
 
-const HowItWork = (props) => {
-  console.log(props);
+const HowItWork = (props: any) => {
   // const containerStyle = {
   //   color: props.textColor,
   //   paragraphColor: props.paragrphColr,
