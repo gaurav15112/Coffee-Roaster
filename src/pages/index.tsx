@@ -9,7 +9,7 @@ import Navbar from "@/Components/Navbar";
 import Hero from "@/Components/HeroSection/Hero";
 import OurCollection from "@/Components/OurCollection/OurCollection";
 import WhyChooseUs from "@/Components/WhyChooseUs/WhyChooseUs";
-import HowItWork from "@/Components/Button/HowItWork/HowItWork";
+import HowItWork from "@/Components/HowItWork/HowItWork";
 import Footer from "@/Components/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });

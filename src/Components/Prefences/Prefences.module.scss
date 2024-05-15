@@ -101,7 +101,7 @@
           background-color: #f4f1ea;
           border-radius: 10px;
           transition: all 0.2s;
-          gap: 30px;
+
           &_title {
             width: 96px;
             font-family: var(--font-playfairDisplay);
@@ -121,6 +121,7 @@
             line-height: 30px;
             text-align: center;
             color: #535353;
+            padding: 30px 23px 0px 25px;
           }
         }
       }

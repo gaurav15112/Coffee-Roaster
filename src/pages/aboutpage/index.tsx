@@ -9,9 +9,12 @@ import Navbar from "@/Components/Navbar";
 import Hero from "@/Components/HeroSection/Hero";
 import data from "../../../public/data.json";
 import Footer from "@/Components/Footer/Footer";
-import HowItWork from "@/Components/Button/HowItWork/HowItWork";
+import HowItWork from "@/Components/HowItWork/HowItWork";
 import Prefences from "@/Components/Prefences/Prefences";
 const inter = Inter({ subsets: ["latin"] });
+interface data {
+  title: string;
+}
 const poppins = Poppins({
   variable: "--font-poppins",
   weight: ["400", "600"],

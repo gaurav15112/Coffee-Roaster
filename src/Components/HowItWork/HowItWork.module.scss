@@ -1,4 +1,4 @@
-@import "../../../styles/Variable";
+@import "../../styles/Variable";
 
 .howitworks {
   // border: 2px solid gold;
@@ -6,7 +6,7 @@
   flex-direction: column;
   gap: 50px;
   padding: 90px;
-  margin-bottom: 111px;
+  margin-bottom: 50px;
   :global .howitworks {
     &_heading {
       &__title {

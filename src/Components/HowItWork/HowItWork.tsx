@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./HowItWork.module.scss";
-import Button from "../Button";
+import Button from "../Button/Button";
 import { redirect } from "next/dist/server/api-utils";
 
 const HowItWork = (props: any) => {
