@@ -2,15 +2,30 @@ import React, { useState } from "react";
 import style from "./Prefences.module.scss";
 import arrow from "../../../public/assets/Vector.svg";
 import Image from "next/image";
-
-const data = {
-  prefences: {
-    title: "Great coffee made simple",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since .",
-    buttontext: "create your plan",
+const data = [
+  {
+    prefences: [
+      {
+        title: " Capsule",
+        description: "Compatible with Nespresso systems and similar brewers",
+      },
+      {
+        title: " Decaf",
+        description: "Compatible with Nespresso systems and similar brewers",
+      },
+      {
+        title: " Blended",
+        description: "Compatible with Nespresso systems and similar brewers",
+      },
+    ],
+    prefencetable: [
+      {
+        title: "01",
+        // o
+      },
+    ],
   },
-};
+];
 const Prefences = () => {
   const [isOpen, setOpen] = useState(false);
   const [clicked, setClicked] = useState(false);
@@ -19,8 +34,9 @@ const Prefences = () => {
     setOpen(!isOpen);
     console.log(!isOpen);
   };
-  const handleCardClick = () => {
+  const handleCardClick = (i: number) => {
     setClicked(!clicked);
+    console.log(i);
   };
   return (
     <>
@@ -32,34 +48,6 @@ const Prefences = () => {
                 <div className="prefences_container_table__title">01</div>
                 <div className="prefences_container_table__heading">
                   Preferences
-                </div>
-              </div>
-              <div className="prefences_container_table_line"></div>
-              <div className="prefences_container_table">
-                <div className="prefences_container_table__title">02</div>
-                <div className="prefences_container_table__heading">
-                  Bean Type
-                </div>
-              </div>
-              <div className="prefences_container_table_line"></div>
-              <div className="prefences_container_table">
-                <div className="prefences_container_table__title">03</div>
-                <div className="prefences_container_table__heading">
-                  Quanity
-                </div>
-              </div>
-              <div className="prefences_container_table_line"></div>
-              <div className="prefences_container_table">
-                <div className="prefences_container_table__title">04</div>
-                <div className="prefences_container_table__heading">
-                  Grind Option
-                </div>
-              </div>
-              <div className="prefences_container_table_line"></div>
-              <div className="prefences_container_table">
-                <div className="prefences_container_table__title">05</div>
-                <div className="prefences_container_table__heading">
-                  Deliveries
                 </div>
               </div>
               <div className="prefences_container_table_line"></div>
@@ -84,36 +72,24 @@ const Prefences = () => {
                 }
                 {isOpen && (
                   <div className="prefences_secondCont_secondConts">
-                    <div
-                      onClick={handleCardClick}
-                      className={`prefences_secondCont_secondConts_cards ${
-                        clicked ? "clicked" : ""
-                      }`}
-                    >
-                      <div className="prefences_secondCont_secondConts_cards_title">
-                        Capsule
-                      </div>
-                      <div className="prefences_secondCont_secondConts_cards_content">
-                        Compatible with Nespresso systems and similar brewers
-                      </div>
-                    </div>
-
-                    <div className="prefences_secondCont_secondConts_cards">
-                      <div className="prefences_secondCont_secondConts_cards_title">
-                        Filter
-                      </div>
-                      <div className="prefences_secondCont_secondConts_cards_content">
-                        Compatible with Nespresso systems and similar brewers
-                      </div>
-                    </div>
-                    <div className="prefences_secondCont_secondConts_cards">
-                      <div className="prefences_secondCont_secondConts_cards_title">
-                        Espresso
-                      </div>
-                      <div className="prefences_secondCont_secondConts_cards_content">
-                        Compatible with Nespresso systems and similar brewers
-                      </div>
-                    </div>
+                    {data.prefences.map((Prefences, index) => {
+                      return (
+                        <div
+                          key={index}
+                          onClick={() => handleCardClick(index)}
+                          className={`prefences_secondCont_secondConts_cards ${
+                            clicked ? "clicked" : ""
+                          }`}
+                        >
+                          <div className="prefences_secondCont_secondConts_cards_title">
+                            {Prefences.title}
+                          </div>
+                          <div className="prefences_secondCont_secondConts_cards_content">
+                            {Prefences.description}
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 )}
               </div>
