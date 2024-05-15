@@ -2,7 +2,7 @@ import React from "react";
 import style from "./WhyChooseUs.module.scss";
 import Image from "next/image";
 import beanlogo from "../../../public/assets/bxs_coffee-bean.svg";
-import giftpack from "../../../public/assets/Vector.svg";
+import giftpack from "../../../public/assets/bxs_gift.svg";
 import truckvan from "../../../public/assets/fa-solid_shipping-fast.svg";
 import data from "../../../public/data.json";
 const WhyChooseUs: React.FC = () => {
