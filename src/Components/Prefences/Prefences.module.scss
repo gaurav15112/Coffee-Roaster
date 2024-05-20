@@ -82,8 +82,12 @@
       &_secondConts {
         display: flex;
         gap: 20px;
-        .clicked {
+        input[type="radio"] {
+          display: none;
+        }
+        input[type="radio"]:checked ~ .clicked {
           background-color: #0e8684;
+
           .prefences_secondCont_secondConts_cards_title {
             color: white;
           }
@@ -91,7 +95,9 @@
             color: white;
           }
         }
+
         &_cards {
+          cursor: pointer;
           display: flex;
           flex-direction: column;
           align-items: center;
