@@ -101,5 +101,5 @@ const Prefences = () => {
     </>
   );
 };
-const pref = () => {};
+
 export default Prefences;
