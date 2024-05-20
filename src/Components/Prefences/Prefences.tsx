@@ -2,30 +2,30 @@ import React, { useState } from "react";
 import style from "./Prefences.module.scss";
 import arrow from "../../../public/assets/Vector.svg";
 import Image from "next/image";
-const data = [
-  {
-    prefences: [
-      {
-        title: " Capsule",
-        description: "Compatible with Nespresso systems and similar brewers",
-      },
-      {
-        title: " Decaf",
-        description: "Compatible with Nespresso systems and similar brewers",
-      },
-      {
-        title: " Blended",
-        description: "Compatible with Nespresso systems and similar brewers",
-      },
-    ],
-    prefencetable: [
-      {
-        title: "01",
-        // o
-      },
-    ],
-  },
-];
+const data = {
+  prefences: [
+    {
+      title: " Capsule",
+      description: "Compatible with Nespresso systems and similar brewers",
+    },
+    {
+      title: " Decaf",
+      description: "Compatible with Nespresso systems and similar brewers",
+    },
+    {
+      title: " Blended",
+      description: "Compatible with Nespresso systems and similar brewers",
+    },
+  ],
+  prefencetable: [
+    {
+      title: "01",
+      // o
+    },
+  ],
+};
+
+console.log(data);
 const Prefences = () => {
   const [isOpen, setOpen] = useState(false);
   const [clicked, setClicked] = useState(false);
@@ -34,10 +34,7 @@ const Prefences = () => {
     setOpen(!isOpen);
     console.log(!isOpen);
   };
-  const handleCardClick = (i: number) => {
-    setClicked(!clicked);
-    console.log(i);
-  };
+
   return (
     <>
       <div className="container-fluid">
@@ -74,20 +71,24 @@ const Prefences = () => {
                   <div className="prefences_secondCont_secondConts">
                     {data.prefences.map((Prefences, index) => {
                       return (
-                        <div
-                          key={index}
-                          onClick={() => handleCardClick(index)}
-                          className={`prefences_secondCont_secondConts_cards ${
-                            clicked ? "clicked" : ""
-                          }`}
-                        >
-                          <div className="prefences_secondCont_secondConts_cards_title">
-                            {Prefences.title}
+                        <label htmlFor={`card-${index}`} key={index}>
+                          <input
+                            type="radio"
+                            name="card"
+                            id={`card-${index}`}
+                          />
+                          <div
+                            key={index}
+                            className="prefences_secondCont_secondConts_cards clicked"
+                          >
+                            <div className="prefences_secondCont_secondConts_cards_title">
+                              {Prefences.title}
+                            </div>
+                            <div className="prefences_secondCont_secondConts_cards_content">
+                              {Prefences.description}
+                            </div>
                           </div>
-                          <div className="prefences_secondCont_secondConts_cards_content">
-                            {Prefences.description}
-                          </div>
-                        </div>
+                        </label>
                       );
                     })}
                   </div>
