@@ -121,7 +121,6 @@ const Prefences = () => {
   const [isOpen, setOpen] = useState(false);
   const [clicked, setClicked] = useState(false);
   const [openIndexes, setOpenIndexes] = useState<number[]>([]);
-  const [clickedIndexes, setClickedIndexes] = useState<number[]>([]);
 
   const handleArrow = (index: any) => {
     setOpenIndexes((prevOpenIndexes) =>
@@ -130,14 +129,6 @@ const Prefences = () => {
         : [...prevOpenIndexes, index]
     );
     // setOpen(!isOpen);
-  };
-
-  const handleCardClick = (cardIndex: number) => {
-    setClickedIndexes((prevClickedIndexes) =>
-      prevClickedIndexes.includes(cardIndex)
-        ? prevClickedIndexes.filter((i) => i !== cardIndex)
-        : [...prevClickedIndexes, cardIndex]
-    );
   };
 
   return (
@@ -183,7 +174,7 @@ const Prefences = () => {
 
                     {openIndexes.includes(index) && (
                       <div className="prefences_secondCont_secondConts">
-                        {item?.data?.map((card, cardIndex) => {
+                        {item?.data?.map((card, index) => {
                           return (
                             <label htmlFor={`card-${index}`} key={index}>
                               <input
@@ -191,16 +182,10 @@ const Prefences = () => {
                                 name={card?.name}
                                 id={`card-${index}`}
                                 value={card?.title}
-                                onClick={() => handleCardClick(cardIndex)}
                               />
                               <div
                                 key={index}
-                                className={`prefences_secondCont_secondConts_cards ${
-                                  clickedIndexes.includes(cardIndex)
-                                    ? "clicked"
-                                    : ""
-                                } 
-                          `}
+                                className="prefences_secondCont_secondConts_cards clicked"
                               >
                                 <div className="prefences_secondCont_secondConts_cards_title">
                                   {card.title}
