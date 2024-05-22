@@ -11,6 +11,7 @@ import data from "../../../public/data.json";
 import Footer from "@/Components/Footer/Footer";
 import HowItWork from "@/Components/HowItWork/HowItWork";
 import Prefences from "@/Components/Prefences/Prefences";
+import OrderSummary from "@/Components/OrderSummary/OrderSummary";
 const inter = Inter({ subsets: ["latin"] });
 interface data {
   title: string;
@@ -59,6 +60,7 @@ export default function Home() {
           paragrphColr={paragrphColr}
         />
         <Prefences />
+        <OrderSummary />
         <Footer />
       </main>
     </>
