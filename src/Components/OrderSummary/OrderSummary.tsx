@@ -2,7 +2,6 @@ import React from "react";
 import style from "./OrderSummary.module.scss";
 
 const OrderSummary = ({ coffee }) => {
-  console.log({ coffee });
   return (
     <>
       <div className={`${style.ordersummary}`}>
