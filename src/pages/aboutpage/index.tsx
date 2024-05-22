@@ -60,7 +60,7 @@ export default function Home() {
           paragrphColr={paragrphColr}
         />
         <Prefences />
-        <OrderSummary />
+
         <Footer />
       </main>
     </>
