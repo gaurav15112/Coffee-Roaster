@@ -18,6 +18,9 @@
         // border: 2px solid black;
 
         &__title {
+          &.click {
+            color: #0e8684;
+          }
           width: 35px;
           height: 33px;
 
