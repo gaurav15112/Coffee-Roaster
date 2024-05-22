@@ -1,0 +1,12 @@
+@import "../../styles/Variable";
+
+.ordersummary {
+  border: 2px solid black;
+  :global .ordersummary {
+    &__title {
+      height: 5px;
+      width: 20px;
+      background-color: red;
+    }
+  }
+}
