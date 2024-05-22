@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import style from "./Prefences.module.scss";
 import arrow from "../../../public/assets/Vector.svg";
 import Image from "next/image";
-
+import OrderSummary from "../OrderSummary/OrderSummary";
+import Button from "../Button/Button";
 const choices = {
   prefencesTable: [
     {
@@ -126,7 +127,7 @@ const choices = {
   ],
 };
 
-const Prefences = () => {
+const Prefences = ({ props }) => {
   const [isOpen, setOpen] = useState(false);
   const [clicked, setClicked] = useState(false);
   const [openIndexes, setOpenIndexes] = useState<number[]>([]);
@@ -210,6 +211,8 @@ const Prefences = () => {
                   </div>
                 );
               })}
+              <OrderSummary />
+              <Button />
             </div>
           </div>
         </div>
