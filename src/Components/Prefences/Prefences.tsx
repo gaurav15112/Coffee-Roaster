@@ -135,7 +135,7 @@ const Prefences = ({ props }) => {
     type: "",
     quantity: "",
     grind: "",
-    deliverSpan: "",
+    deliver: "",
   });
   const [openIndexes, setOpenIndexes] = useState<number[]>([]);
 
@@ -146,6 +146,12 @@ const Prefences = ({ props }) => {
         : [...prevOpenIndexes, index]
     );
     // setOpen(!isOpen);
+  };
+  const handleRadioChange = (name: string, value: string) => {
+    setCoffee((prevCoffee) => ({
+      ...prevCoffee,
+      [name]: value,
+    }));
   };
 
   return (
@@ -198,6 +204,9 @@ const Prefences = ({ props }) => {
                                 type="radio"
                                 name={`${card.name}`}
                                 id={`card-${index}`}
+                                onChange={() =>
+                                  handleRadioChange(card.name, card.title)
+                                }
                               />
                               <div
                                 key={index}
@@ -218,7 +227,7 @@ const Prefences = ({ props }) => {
                   </div>
                 );
               })}
-              <OrderSummary />
+              <OrderSummary coffee={coffee} />
               <Button buttonText="Create my plan" />
             </div>
           </div>
