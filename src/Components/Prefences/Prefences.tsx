@@ -64,16 +64,19 @@ const choices = {
           title: " 250g",
           description:
             "Perfect for the solo drinker.Yields about 12 delicious cups.",
+          name: "quantity",
         },
         {
           title: " 500g",
           description:
             "Perfect for the solo drinker.Yields about 12 delicious cups.",
+          name: "quantity",
         },
         {
           title: " 1000g",
           description:
             "Perfect for the solo drinker.Yields about 12 delicious cups.",
+          name: "quantity",
         },
       ],
     },
@@ -84,16 +87,19 @@ const choices = {
           title: " Wholebean",
           description:
             "Perfect for the solo drinker.Yields about 12 delicious cups.",
+          name: "grind",
         },
         {
           title: " Filter",
           description:
             "Perfect for the solo drinker.Yields about 12 delicious cups.",
+          name: "grind",
         },
         {
           title: " Cafetiere",
           description:
             "Perfect for the solo drinker.Yields about 12 delicious cups.",
+          name: "grind",
         },
       ],
     },
@@ -103,14 +109,17 @@ const choices = {
         {
           title: " Every week",
           description: "$14.00 per shipment includes free first-class shipping",
+          name: "deliver",
         },
         {
           title: " Every 2 weeks",
           description: "$17.25 per shipment. includes free priority shipping",
+          name: "deliver",
         },
         {
           title: " Every month",
           description: "$22.50 per shipment. includes free priority shipping",
+          name: "deliver",
         },
       ],
     },
@@ -137,11 +146,11 @@ const Prefences = () => {
         <div className="container">
           <div className={`${style.prefences}`}>
             <div className="prefences_container">
-              {choices.prefencesTable.map((item) => {
+              {choices.prefencesTable.map((item, index) => {
                 return (
-                  <>
-                    <div className="prefences_container_table">
-                      <div className="prefences_container_table__title">
+                  <React.Fragment key={item.serialno || index}>
+                    <div className="prefences_container_table clicked">
+                      <div className="prefences_container_table__title ">
                         {item.serialno}
                       </div>
                       <div className="prefences_container_table__heading">
@@ -149,7 +158,7 @@ const Prefences = () => {
                       </div>
                     </div>
                     <div className="prefences_container_table_line"></div>
-                  </>
+                  </React.Fragment>
                 );
               })}
             </div>
@@ -176,16 +185,15 @@ const Prefences = () => {
                       <div className="prefences_secondCont_secondConts">
                         {item?.data?.map((card, index) => {
                           return (
-                            <label htmlFor={`card-${index}`} key={index}>
+                            <label>
                               <input
                                 type="radio"
-                                name={card?.name}
+                                name={`${card.name}`}
                                 id={`card-${index}`}
-                                value={card?.title}
                               />
                               <div
                                 key={index}
-                                className="prefences_secondCont_secondConts_cards clicked"
+                                className="prefences_secondCont_secondConts_cards clicked "
                               >
                                 <div className="prefences_secondCont_secondConts_cards_title">
                                   {card.title}
