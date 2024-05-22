@@ -131,8 +131,8 @@ const Prefences = ({ props }) => {
   const [isOpen, setOpen] = useState(false);
   const [clicked, setClicked] = useState(false);
   const [coffee, setCoffee] = useState({
-    coffee: "",
-    type: "",
+    flavour: "",
+    taste: "",
     quantity: "",
     grind: "",
     deliver: "",
@@ -153,7 +153,20 @@ const Prefences = ({ props }) => {
       [name]: value,
     }));
   };
+  const allFieldsFilled = Object.values(coffee).every((value) => value !== "");
 
+  const handleCreatePlan = () => {
+    if (allFieldsFilled) {
+      alert("Your plan has been created!");
+    } else {
+      alert("Please fill in all fields to create your plan.");
+    }
+  };
+  const [clickedIndex, setClickedIndex] = useState<number | null>(null);
+
+  const handleHeadingClick = (index: number) => {
+    setClickedIndex(index);
+  };
   return (
     <>
       <div className="container-fluid">
@@ -163,7 +176,7 @@ const Prefences = ({ props }) => {
               {choices.prefencesTable.map((item, index) => {
                 return (
                   <React.Fragment key={item.serialno || index}>
-                    <div className="prefences_container_table clicked">
+                    <div className="prefences_container_table ">
                       <div className="prefences_container_table__title ">
                         {item.serialno}
                       </div>
@@ -227,8 +240,8 @@ const Prefences = ({ props }) => {
                   </div>
                 );
               })}
-              <OrderSummary coffee={coffee} />
-              <Button buttonText="Create my plan" />
+              {allFieldsFilled && <OrderSummary coffee={coffee} />}
+              <Button buttonText="Create my plan" onClick={handleCreatePlan} />
             </div>
           </div>
         </div>
