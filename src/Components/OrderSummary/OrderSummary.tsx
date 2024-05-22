@@ -1,16 +1,19 @@
 import React from "react";
 import style from "./OrderSummary.module.scss";
 
-const OrderSummary = () => {
+const OrderSummary = ({ coffee }) => {
+  console.log({ coffee });
   return (
     <>
       <div className="container">
         <div className={`${style.ordersummary} container-fluid`}>
           <div className="ordersummary__title ">ORDER SUMMARY </div>
           <div className="ordersummary__description">
-            I drink my coffee as <span>Filter</span> with a <span>Decaf</span>
-            type of bean. <span>250g</span> ground ala <span>Cafetiere</span>
-            sent to me <span>Every Week.</span>
+            I drink my coffee as <span>{coffee.flavour}</span> with a
+            <span> {coffee.taste}</span>
+            Type of bean. <span> {coffee.quantity}</span> ground ala
+            <span>{coffee.grind}</span>
+            sent to me <span>{coffee.deliver}</span>
           </div>
         </div>
       </div>
