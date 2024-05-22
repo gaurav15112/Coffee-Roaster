@@ -1,13 +1,13 @@
 @import "../../styles/Variable";
 
 .ordersummary {
-  background-color: #262d35;
-  padding: 33px 43px 0 42px;
-  margin-bottom: 60px;
-
+  margin-bottom: 25px;
   :global .ordersummary {
-    margin-bottom: 25px;
-
+    &__container {
+      padding: 33px 43px 0 42px;
+      margin-bottom: 60px;
+      background-color: #262d35;
+    }
     &__title {
       color: #b7b7b8;
       font-family: var(--font-poppins);
