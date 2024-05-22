@@ -130,6 +130,13 @@ const choices = {
 const Prefences = ({ props }) => {
   const [isOpen, setOpen] = useState(false);
   const [clicked, setClicked] = useState(false);
+  const [coffee, setCoffee] = useState({
+    coffee: "",
+    type: "",
+    quantity: "",
+    grind: "",
+    deliverSpan: "",
+  });
   const [openIndexes, setOpenIndexes] = useState<number[]>([]);
 
   const handleArrow = (index: any) => {
@@ -212,7 +219,7 @@ const Prefences = ({ props }) => {
                 );
               })}
               <OrderSummary />
-              <Button />
+              <Button buttonText="Create my plan" />
             </div>
           </div>
         </div>
