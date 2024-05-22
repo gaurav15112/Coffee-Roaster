@@ -45,7 +45,8 @@
     &_secondCont {
       // border: 2px solid yellow;
       width: 646px;
-
+      display: flex;
+      flex-direction: column;
       &_card {
         cursor: pointer;
         &__heading {
