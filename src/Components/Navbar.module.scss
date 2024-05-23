@@ -32,5 +32,64 @@
       font-weight: 400;
       line-height: 25px;
     }
+    &_MenuButton {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    position: relative;
+    :global .navbar {
+      &_logo {
+        width: 100%;
+        img {
+          width: 50%;
+          height: auto;
+          cursor: pointer;
+        }
+      }
+      &_links {
+        display: none;
+        gap: 50px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        list-style-type: none;
+        a {
+          text-decoration: none;
+        }
+        a:hover {
+          text-decoration: underline;
+          color: $black-color;
+        }
+      }
+      &__open {
+        position: absolute;
+        top: 57px;
+        display: flex;
+        font-weight: 700;
+      }
+      &_item {
+        font-size: 15px;
+        // display: none;
+        color: #0c8785;
+        font-family: var(--font-poppins);
+        font-weight: 400;
+        line-height: 25px;
+      }
+      &__MenuButton {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 65px;
+        height: 50px;
+        span {
+          border-radius: 2px;
+          background-color: #0c8785;
+          width: 34px;
+          height: 3px;
+        }
+      }
+    }
   }
 }
