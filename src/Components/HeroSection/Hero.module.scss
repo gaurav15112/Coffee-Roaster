@@ -31,4 +31,30 @@
       font-weight: 400;
     }
   }
+  @media screen and (max-width: 767px) {
+    border-radius: 0px;
+    :global .banner {
+      &_inner {
+        margin-top: 20px;
+      }
+      &_heading {
+        color: $primary-color;
+        width: 100%;
+        line-height: 51px;
+        font-size: 51px;
+        margin-bottom: 32px;
+        font-family: var(--font-PlayfairDisplay);
+        font-weight: 900;
+      }
+      &_paragraph {
+        width: 100%;
+        font-size: 16px;
+        line-height: 32px;
+        color: #e8e8e8;
+        margin-bottom: 42px;
+        font-family: var(--font-poppins);
+        font-weight: 400;
+      }
+    }
+  }
 }
