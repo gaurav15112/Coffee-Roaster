@@ -4,11 +4,17 @@ import Link from "next/link";
 
 interface ButtonProps {
   buttonText: string;
+  onClick: () => void;
 }
 const Button: React.FC<ButtonProps> = (props) => {
   return (
     <>
-      <input type="button" value={props.buttonText} className={styles.button} />
+      <input
+        onClick={props.onClick}
+        type="button"
+        value={props.buttonText}
+        className={styles.button}
+      />
     </>
   );
 };
