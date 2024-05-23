@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Navbar.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 
 const Navbar: React.FC = () => {
+  const [isOpen, setOpen] = useState(false);
+
+  const handleToggle = () => {
+    setOpen(!isOpen);
+  };
   return (
     <>
       <header className="container-fluid">
@@ -18,7 +23,7 @@ const Navbar: React.FC = () => {
               />
             </Link>
           </div>
-          <ul className="navbar_links">
+          <ul className={`navbar_links ${isOpen ? "navbar__open" : ""} `}>
             <Link href="/">
               <li className="navbar_item">Home</li>
             </Link>
@@ -29,6 +34,12 @@ const Navbar: React.FC = () => {
               <li className="navbar_item">Create Your Plan</li>
             </Link>
           </ul>
+
+          <div onClick={handleToggle} className="navbar__MenuButton ">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </nav>
       </header>
     </>
