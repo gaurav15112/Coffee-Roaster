@@ -12,4 +12,9 @@
   line-height: 30px;
   font-family: var(--font-playfairDisplay);
   font-weight: 900;
+  :global .button {
+  }
+  @media screen and (max-width: 767px) {
+    width: 188px;
+  }
 }
