@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
   };
   return (
     <>
-      <header className="container-fluid">
+      <header className="header container-fluid ">
         <nav className={`${styles.navbar} container`}>
           <div className="navbar_logo">
             <Link href={"#"}>
@@ -23,7 +23,11 @@ const Navbar: React.FC = () => {
               />
             </Link>
           </div>
-          <ul className={`navbar_links ${isOpen ? "navbar__open" : ""} `}>
+          <ul
+            className={`navbar_links navbar__open ${
+              isOpen ? "navbar_active" : ""
+            } `}
+          >
             <Link href="/">
               <li className="navbar_item">Home</li>
             </Link>
