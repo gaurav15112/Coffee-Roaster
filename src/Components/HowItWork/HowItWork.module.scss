@@ -124,10 +124,11 @@
 
       &_section {
         display: flex;
+        display: none;
         &_steps {
           display: flex;
           position: relative;
-          right: 60px;
+          left: 100px;
           align-items: center;
 
           &__ellipse {
@@ -146,7 +147,8 @@
       &_plans {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
+        align-items: center;
         gap: 80px;
         width: 100%;
         margin-top: 41px;
@@ -197,6 +199,114 @@
         }
       }
       &_button {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .button {
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 767px) and (max-width: 1024px) {
+    flex-direction: column;
+    :global .howitworks {
+      &_heading {
+        &__title {
+          width: 178px;
+          height: 33px;
+          h2 {
+            font-family: var(--font-playfairDisplay);
+            font-size: 28px;
+            font-weight: 900;
+            line-height: 38px;
+            text-align: left;
+          }
+        }
+        &--blue {
+          background-color: red;
+        }
+      }
+
+      &_section {
+        display: flex;
+        display: none;
+        &_steps {
+          display: flex;
+          position: relative;
+          left: 167px;
+          align-items: center;
+
+          &__ellipse {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #0e8684;
+            border-radius: 50%;
+          }
+          &__line {
+            width: 200px;
+            border: 1px solid #fbd6b9;
+            height: 1px;
+          }
+        }
+      }
+      &_plans {
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        margin-top: 41px;
+        // border: 2px solid red;
+        &__card {
+          width: 266px;
+          height: auto;
+          // border: 2px solid yellowgreen;
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+          margin-bottom: 20px;
+          &_title {
+            width: 103px;
+            height: 78px;
+            h2 {
+              font-family: var(--font-playfairDisplay);
+              font-size: 60px;
+              line-height: 90px;
+              text-align: center;
+              font-weight: 900;
+              color: #fbd6b9;
+            }
+          }
+          &_header {
+            width: 180px;
+            height: 90px;
+            h3 {
+              font-family: var(--font-playfairDisplay);
+              font-size: 27px;
+              font-weight: 900;
+              line-height: 42px;
+              text-align: left;
+              color: $black-color2;
+            }
+          }
+          &_content {
+            width: 206px;
+            p {
+              font-family: var(--font-poppins);
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 30px;
+
+              color: #535353;
+            }
+          }
+        }
+      }
+      &_button {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
         .button {
         }
       }
