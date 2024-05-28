@@ -2,10 +2,44 @@ import React, { useState } from "react";
 import styles from "./Navbar.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+interface Navbar {
+  logo: {
+    alt: string;
+    path: string;
+  };
+  links: Array<{
+    path: string;
+    name: string;
+  }>;
+}
 
-const Navbar: React.FC = () => {
+const data = {
+  logo: {
+    alt: "coffee roasters",
+    path: "/assets/logo.png",
+  },
+  links: [
+    {
+      path: "/",
+      name: "Home",
+    },
+    {
+      path: "/aboutpage",
+      name: "About us",
+    },
+    {
+      path: "#",
+      name: "Create Your Plan",
+    },
+    {
+      path: "/",
+      name: "contact us",
+    },
+  ],
+};
+const Navbar: React.FC<Navbar> = (props) => {
   const [isOpen, setOpen] = useState(false);
-
+  const navbar: Navbar = data;
   const handleToggle = () => {
     setOpen(!isOpen);
   };
@@ -14,10 +48,10 @@ const Navbar: React.FC = () => {
       <header className="header container-fluid ">
         <nav className={`${styles.navbar} container`}>
           <div className="navbar_logo">
-            <Link href={"#"}>
+            <Link href={navbar?.logo?.path}>
               <Image
-                src="/assets/logo.png"
-                alt="coffee roasters"
+                src={navbar?.logo?.path}
+                alt={navbar?.logo?.alt}
                 width={300}
                 height={80}
               />
@@ -28,15 +62,13 @@ const Navbar: React.FC = () => {
               isOpen ? "navbar_active" : ""
             } `}
           >
-            <Link href="/">
-              <li className="navbar_item">Home</li>
-            </Link>
-            <Link href="/aboutpage">
-              <li className="navbar_item">About us</li>
-            </Link>
-            <Link href="#">
-              <li className="navbar_item">Create Your Plan</li>
-            </Link>
+            {navbar.links.map((link, index) => {
+              return (
+                <Link key={index} href={link?.path}>
+                  <li className="navbar_item">{link?.name}</li>
+                </Link>
+              );
+            })}
           </ul>
 
           <div onClick={handleToggle} className="navbar__MenuButton ">
