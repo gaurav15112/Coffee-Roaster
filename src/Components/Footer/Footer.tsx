@@ -6,43 +6,104 @@ import fb from "../../../public/assets/fb.svg";
 import twitter from "../../../public/assets/twitter.svg";
 import insta from "../../../public/assets/insta.svg";
 import coffeeroaster from "../../../public/assets/cofferoaster.svg";
-const Footer: React.FC = () => {
+
+interface Footer {
+  logo: {
+    path: string;
+    alt: string;
+  };
+  links: Array<{
+    path: string;
+    name: string;
+  }>;
+
+  socialLinks: Array<{
+    platform: string;
+    url: string;
+    path: string;
+  }>;
+}
+const data = {
+  logo: {
+    path: "/assets/cofferoaster.svg",
+    alt: "footer logo",
+  },
+  links: [
+    {
+      path: "/",
+      name: "HOME",
+    },
+    {
+      path: "/",
+      name: "ABOUT US",
+    },
+    {
+      path: "/",
+      name: "CREATE YOUR PLAN",
+    },
+    {
+      path: "/",
+      name: "CONTACT US",
+    },
+  ],
+  socialLinks: [
+    {
+      platform: "Facebook",
+      url: "https://www.facebook.com",
+      path: "/assets/fb.svg",
+    },
+    {
+      platform: "Twitter",
+      url: "https://www.twitter.com",
+      path: "assets/twitter.svg",
+    },
+    {
+      platform: "Instagram",
+      url: "https://www.instagram.com",
+      path: "assets/insta.svg",
+    },
+  ],
+};
+const Footer: React.FC<Footer> = () => {
+  const footer: Footer = data;
   return (
     <>
       <div className="container-fluid">
         <div className="container">
           <div className={footerstyle.footer}>
             <div className="footer_logo">
-              <Link href={"https://www.coffeeroaster.com"} target="_blank">
-                <Image src={coffeeroaster} alt="coffee roasters" />
+              <Link href={footer?.logo?.path} target="_blank">
+                <Image
+                  src={footer?.logo?.path}
+                  alt={footer?.logo?.alt}
+                  width={300}
+                  height={80}
+                />
               </Link>
             </div>
             <ul className="footer_links">
-              <Link href="#">
-                <li className="footer_item">HOME</li>
-              </Link>
-              <Link href="#">
-                <li className="footer_item">ABOUT US</li>
-              </Link>
-              <Link href="#">
-                <li className="footer_item">CREATE YOUR PLAN</li>
-              </Link>
+              {footer.links.map((links, index) => {
+                return (
+                  <Link key={index} href={links?.path}>
+                    <li className="footer_item">{links?.name}</li>
+                  </Link>
+                );
+              })}
             </ul>
-            <div className="footer_social-logo">
-              <div className="footer_social-logo__fb">
-                <Link href={"https://www.facebook.com"} target="_blank">
-                  <Image src={fb} alt="fblogo" />
-                </Link>
-              </div>
-              <div className="footer_social-logo__twitter">
-                <Link href={"https://www.twitter.com"} target="_blank">
-                  <Image src={twitter} alt="twitterlogo" />
-                </Link>
-              </div>
-              <div className="footer_social-logo__insta">
-                <Link href={"https://www.instagram.com"} target="_blank">
-                  <Image src={insta} alt="instalogo" />
-                </Link>
+            <div className="footer_social">
+              <div className="footer_social_logo">
+                {footer.socialLinks.map((socialLinks, index) => {
+                  return (
+                    <Link key={index} href={socialLinks?.url} target="_blank">
+                      <Image
+                        src={socialLinks?.path}
+                        alt={socialLinks?.platform}
+                        width={30}
+                        height={30}
+                      />
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </div>
