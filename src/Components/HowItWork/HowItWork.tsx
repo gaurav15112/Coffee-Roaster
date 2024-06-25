@@ -4,6 +4,7 @@ import Button from "../Button/Button";
 
 interface HowItWork {
   heading: string;
+
   cards: Array<{
     sno: string;
     title: string;
@@ -33,7 +34,7 @@ const data = {
     },
   ],
 };
-const HowItWork: React.FC<HowItWork> = (props: any) => {
+const HowItWork: React.FC = (props: any) => {
   const howitworks: HowItWork = data;
   return (
     <>
@@ -47,7 +48,7 @@ const HowItWork: React.FC<HowItWork> = (props: any) => {
               className="howitworks_heading__title"
               style={{ display: props.isVisible ? "block" : "none" }}
             >
-              <h2> {howitworks.heading}</h2>
+              <h2> {howitworks?.heading}</h2>
             </div>
           </div>
           <div className="howitworks_section">

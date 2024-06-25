@@ -41,7 +41,7 @@ const data = {
     },
   ],
 };
-const WhyChooseUs: React.FC<WhyChooseUs> = () => {
+const WhyChooseUs: React.FC = () => {
   const whychooseus: WhyChooseUs = data;
   return (
     <>

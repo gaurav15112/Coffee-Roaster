@@ -127,7 +127,7 @@ const choices = {
   ],
 };
 
-const Prefences = ({ props }) => {
+const Prefences = ({ props }: any) => {
   const [isOpen, setOpen] = useState(false);
   const [clicked, setClicked] = useState(false);
   const [coffee, setCoffee] = useState({
@@ -212,7 +212,7 @@ const Prefences = ({ props }) => {
                       <div className="prefences_secondCont_secondConts">
                         {item?.data?.map((card, index) => {
                           return (
-                            <label>
+                            <label key={index}>
                               <input
                                 type="radio"
                                 name={`${card.name}`}

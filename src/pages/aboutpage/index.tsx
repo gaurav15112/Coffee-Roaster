@@ -1,4 +1,5 @@
 import Head from "next/head";
+
 import {
   Inter,
   Poppins,
@@ -13,8 +14,10 @@ import HowItWork from "@/Components/HowItWork/HowItWork";
 import Prefences from "@/Components/Prefences/Prefences";
 import OrderSummary from "@/Components/OrderSummary/OrderSummary";
 const inter = Inter({ subsets: ["latin"] });
-interface data {
+export interface HeroSectionData {
   title: string;
+  description: string;
+  buttontext: string;
 }
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -27,13 +30,12 @@ const playfairDisplay = Playfair_Display_SC({
   weight: ["400", "700", "900"],
   subsets: ["latin"],
 });
-
-const homeBanner = {
+const homeBanner: { herosection: HeroSectionData } = {
   herosection: {
     title: "Create in Plan",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since .",
-    buttontext: "",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.",
+    buttontext: "", // Ensure buttontext is defined correctly
   },
 };
 
@@ -50,10 +52,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${poppins.variable} ${playfairDisplay.variable}`}>
+      <main className={`${poppins?.variable} ${playfairDisplay.variable}`}>
         <Navbar />
-        <Hero data={homeBanner.herosection} />
+        <Hero data={homeBanner?.herosection} />
         <HowItWork
+          //@ts-ignore
           backgroundcolor={backgroundColor}
           textColor={textColor}
           isVisible={isVisible}

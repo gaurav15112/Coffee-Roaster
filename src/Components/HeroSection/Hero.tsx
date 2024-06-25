@@ -2,26 +2,37 @@ import React from "react";
 import styles from "./Hero.module.scss";
 import { Playfair_Display_SC } from "next/font/google";
 import Button from "../Button/Button";
+import { HeroSectionData } from "@/pages/aboutpage";
 const playfairDisplay = Playfair_Display_SC({
   weight: ["400", "700", "900"],
   subsets: ["latin"],
 });
+interface HeroProps {
+  data: HeroSectionData;
+}
 
-const Hero: React.FC = (props: any) => {
-  const { buttontext } = props?.data;
+const Hero: React.FC<HeroProps> = ({ data }: any) => {
+  const { buttontext } = data;
   return (
     <div className="container-fluid">
       <div className={`${styles.banner} container`}>
         <div className="banner_inner">
-          {props?.data?.title && (
+          {data?.title && (
             <div className={`banner_heading ${playfairDisplay.className}`}>
-              {props?.data?.title}
+              {data?.title}
             </div>
           )}
-          {props?.data?.description && (
-            <p className="banner_paragraph">{props?.data?.description}</p>
+          {data?.data?.description && (
+            <p className="banner_paragraph">{data?.description}</p>
           )}
-          {buttontext && <Button buttonText={buttontext} />}
+          {buttontext && (
+            <Button
+              buttonText={buttontext}
+              // onClick={() => {
+              //   console.log("clicked");
+              // }}
+            />
+          )}
         </div>
       </div>
     </div>

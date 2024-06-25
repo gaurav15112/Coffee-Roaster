@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./OrderSummary.module.scss";
 
-const OrderSummary = ({ coffee }) => {
+const OrderSummary = ({ coffee }: any) => {
   return (
     <>
       <div className={`${style.ordersummary}`}>

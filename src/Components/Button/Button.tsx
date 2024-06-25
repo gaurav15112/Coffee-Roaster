@@ -4,7 +4,7 @@ import Link from "next/link";
 
 interface ButtonProps {
   buttonText: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 const Button: React.FC<ButtonProps> = (props) => {
   return (

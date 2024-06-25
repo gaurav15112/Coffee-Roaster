@@ -37,7 +37,7 @@ const data = {
     },
   ],
 };
-const Navbar: React.FC<Navbar> = (props) => {
+const Navbar: React.FC = () => {
   const [isOpen, setOpen] = useState(false);
   const navbar: Navbar = data;
   const handleToggle = () => {

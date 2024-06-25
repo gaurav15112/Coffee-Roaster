@@ -41,7 +41,7 @@ const data = {
   ],
 };
 
-const OurCollection: React.FC<ourCollection> = () => {
+const OurCollection: React.FC = () => {
   const ourcollection: ourCollection = data;
   return (
     <>

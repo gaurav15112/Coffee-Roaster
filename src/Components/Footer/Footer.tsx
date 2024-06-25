@@ -60,7 +60,7 @@ const data = {
     },
   ],
 };
-const Footer: React.FC<Footer> = () => {
+const Footer: React.FC = () => {
   const footer: Footer = data;
   return (
     <>
