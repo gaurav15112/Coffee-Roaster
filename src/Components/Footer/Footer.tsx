@@ -2,10 +2,6 @@ import React from "react";
 import footerstyle from "./Footer.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import fb from "../../../public/assets/fb.svg";
-import twitter from "../../../public/assets/twitter.svg";
-import insta from "../../../public/assets/insta.svg";
-import coffeeroaster from "../../../public/assets/cofferoaster.svg";
 
 interface Footer {
   logo: {
