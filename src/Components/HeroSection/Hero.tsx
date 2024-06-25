@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Hero.module.scss";
 import { Playfair_Display_SC } from "next/font/google";
 import Button from "../Button/Button";
-
 const playfairDisplay = Playfair_Display_SC({
   weight: ["400", "700", "900"],
   subsets: ["latin"],
