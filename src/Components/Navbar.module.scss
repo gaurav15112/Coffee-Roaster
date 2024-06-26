@@ -2,6 +2,7 @@
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   :global .navbar {
     &_logo {
       width: 247px;
@@ -42,14 +43,14 @@
       &_logo {
         width: 70%;
         img {
-          width: 100%;
+          width: 69%;
           height: auto;
           cursor: pointer;
         }
       }
       &_links {
         display: none;
-        gap: 50px;
+        gap: 29px;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -68,19 +69,20 @@
         top: 79px;
         display: flex;
         font-weight: 700;
-        align-items: flex-start;
+        align-items: center;
         left: 0;
         padding: 0px;
         background-color: $primary-color;
         overflow: hidden;
         height: 0;
-        transition: 0.2s all ease-in;
+        transition: 0.3s all ease-in;
       }
       &_active {
         padding: 10px;
         overflow: none;
         height: auto;
         overflow: visible;
+        box-shadow: -1px 1px 11px rgba(0, 0, 0, 0.1);
       }
       &_item {
         font-size: 15px;
@@ -90,19 +92,38 @@
         font-weight: 400;
         line-height: 25px;
       }
-      &__MenuButton {
+      &__menuBtn {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
         width: 65px;
         height: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 65px;
+        height: 50px;
+        position: relative;
 
         span {
           border-radius: 2px;
-          background-color: #0c8785;
+          background-color: black;
           width: 34px;
           height: 3px;
+          transition: all 0.3s ease;
+        }
+        &--line1 {
+          rotate: 45deg;
+          position: absolute;
+        }
+        &--line2 {
+          display: none;
+        }
+        &--line3 {
+          rotate: -45deg;
+          position: absolute;
         }
       }
     }
@@ -110,70 +131,6 @@
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     position: relative;
     :global .navbar {
-      &_logo {
-        img {
-          height: auto;
-          cursor: pointer;
-        }
-      }
-      &_links {
-        display: none;
-        gap: 50px;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        list-style-type: none;
-        a {
-          text-decoration: none;
-        }
-        a:hover {
-          text-decoration: underline;
-          color: $black-color;
-        }
-      }
-      &__open {
-        position: absolute;
-        width: 100%;
-        top: 75px;
-        display: flex;
-        font-weight: 700;
-        align-items: flex-start;
-        left: 0;
-        padding: 0px;
-        background-color: $primary-color;
-        overflow: hidden;
-        height: 0;
-        transition: 0.2s all ease-in;
-      }
-      &_active {
-        padding: 10px;
-        overflow: none;
-        height: auto;
-        overflow: visible;
-      }
-      &_item {
-        font-size: 15px;
-        // display: none;
-        color: #0c8785;
-        font-family: var(--font-poppins);
-        font-weight: 400;
-        line-height: 25px;
-      }
-      &__MenuButton {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        width: 65px;
-        height: 50px;
-
-        span {
-          border-radius: 2px;
-          background-color: #0c8785;
-          width: 34px;
-          height: 3px;
-        }
-      }
     }
   }
 }
