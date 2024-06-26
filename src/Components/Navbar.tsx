@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.scss";
 import Image from "next/image";
 import Link from "next/link";
@@ -40,9 +40,22 @@ const data = {
 const Navbar: React.FC = () => {
   const [isOpen, setOpen] = useState(false);
   const navbar: Navbar = data;
+
   const handleToggle = () => {
     setOpen(!isOpen);
   };
+
+  const handleLinkClick = () => {
+    setOpen(false);
+  };
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "visible";
+    }
+  });
+
   return (
     <>
       <header className="header container-fluid ">
@@ -58,6 +71,7 @@ const Navbar: React.FC = () => {
             </Link>
           </div>
           <ul
+            onClick={handleLinkClick}
             className={`navbar_links navbar__open ${
               isOpen ? "navbar_active" : ""
             } `}
@@ -71,10 +85,16 @@ const Navbar: React.FC = () => {
             })}
           </ul>
 
-          <div onClick={handleToggle} className="navbar__MenuButton ">
-            <span></span>
-            <span></span>
-            <span></span>
+          <div onClick={handleToggle} className="navbar__menuBtn ">
+            <span
+              className={`navbar__menuBtn${isOpen ? "--line1" : ""}`}
+            ></span>
+            <span
+              className={`navbar__menuBtn${isOpen ? "--line2" : ""}`}
+            ></span>
+            <span
+              className={`navbar__menuBtn${isOpen ? "--line3" : ""}`}
+            ></span>
           </div>
         </nav>
       </header>
