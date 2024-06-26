@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
   const footer: Footer = data;
   return (
     <>
-      <div className="container-fluid ">
+      <div className="container-fluid background">
         <div className="container">
           <div className={footerstyle.footer}>
             <div className="footer_logo">
