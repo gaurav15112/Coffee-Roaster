@@ -22,7 +22,7 @@ const Hero: React.FC<HeroProps> = ({ data }: any) => {
               {data?.title}
             </div>
           )}
-          {data?.data?.description && (
+          {data?.description && (
             <p className="banner_paragraph">{data?.description}</p>
           )}
           {buttontext && (
