@@ -59,7 +59,7 @@
         // border: 2px solid yellowgreen;
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 16px;
         margin-bottom: 20px;
         &_title {
           width: 103px;
@@ -106,6 +106,7 @@
   @media screen and (max-width: 767px) {
     :global .howitworks {
       border-radius: 0px;
+      gap: 28px;
       &_heading {
         &__title {
           width: 178px;
